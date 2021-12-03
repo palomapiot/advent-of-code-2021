@@ -1,17 +1,3 @@
-import 'dart:io';
-import 'dart:convert';
-
-Future<List<String>> readFileByLines() async {
-  var path = './res/aoc2.txt';
-  var data = <String>[];
-  await File(path)
-      .openRead()
-      .transform(utf8.decoder)
-      .transform(LineSplitter())
-      .forEach((l) => data.add(l));
-  return data;
-}
-
 int dive(List<String> data) {
   var horizontal = 0;
   var depth = 0;
