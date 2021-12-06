@@ -24,14 +24,14 @@ int binaryDiagnostic2(List<String> data) {
 }
 
 String calculate(List<String> data, int numberLength, Function f) {
-  var co2ScrubberRating = '';
+  var rating = '';
   for (var i = 0; i < numberLength; i++) {
     var positions = data.map((e) => e[i]).toList();
     var ones = positions.where((e) => e.toString() == '1').length;
     f(ones, positions.length - ones)
         ? data.removeWhere((e) => e[i] == '0')
         : data.removeWhere((e) => e[i] == '1');
-    data.length == 1 ? co2ScrubberRating = data.first : null;
+    data.length == 1 ? rating = data.first : null;
   }
-  return co2ScrubberRating;
+  return rating; // 1032597
 }

@@ -22,3 +22,17 @@ Future<List<String>> readStringFileByLines(String file) async {
       .forEach((l) => data.add(l));
   return data;
 }
+
+Future<List<int>> readFirstLineNumbers(String file) async {
+  var path = file;
+  var data = await File(path)
+      .openRead()
+      .transform(utf8.decoder)
+      .transform(LineSplitter())
+      .first;
+  var numbers = <int>[];
+  data.split(',').forEach((element) {
+    numbers.add(int.parse(element));
+  });
+  return numbers;
+}

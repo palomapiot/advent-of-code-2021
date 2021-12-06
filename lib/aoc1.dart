@@ -1,11 +1,9 @@
 int sonarSweep(List<int> data) {
   var increased = 0;
   for (var i = 1; i < data.length; i++) {
-    if (data[i] > data[i - 1]) {
-      increased += 1;
-    }
+    data[i] > data[i - 1] ? increased += 1 : null;
   }
-  return increased;
+  return increased; // 1448
 }
 
 int sonarSweep2(List<int> data) {
@@ -13,9 +11,7 @@ int sonarSweep2(List<int> data) {
   var prevSum = data[0] + data[1] + data[2];
   for (var i = 3; i < data.length; i++) {
     var newSum = prevSum + data[i] - data[i - 3];
-    if (newSum > prevSum) {
-      increased += 1;
-    }
+    newSum > prevSum ? increased += 1 : null;
     prevSum = newSum;
   }
   return increased;
