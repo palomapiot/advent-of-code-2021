@@ -14,5 +14,5 @@ int sonarSweep2(List<int> data) {
     newSum > prevSum ? increased += 1 : null;
     prevSum = newSum;
   }
-  return increased;
+  return increased; // 1471
 }
